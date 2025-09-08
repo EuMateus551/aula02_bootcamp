@@ -9,7 +9,26 @@ except ValueError:
 
 #Exercício 22: Verificador de Palíndromo
 #Crie um programa que verifica se uma palavra ou frase é um palíndromo (lê-se igualmente de trás para frente, desconsiderando espaços e pontuações). Utilize try-except para garantir que a entrada seja uma string. Dica: Utilize a função isinstance() para verificar o tipo da entrada.
+import string
+try:
+  frase = input("Digite uma palavra ou frase: ")
+  
+  if not isinstance(frase, str):
+    raise ValueError("Erro: Você não digitou uma palavra ou frase")
+  
+  frase_limpa = frase.lower()
+  frase_limpa = frase_limpa.replace()
+  frase_limpa = frase_limpa.translate()
 
+  frase_invertida = frase_limpa[::-1]
+
+  if frase_limpa == frase_invertida:
+    print("É um palíndromo")
+  else:
+    print("Não é um palíndromo")
+except ValueError as e:
+  print(f"Erro: {e}")
+  
 #Exercício 23: Calculadora Simples
 #Desenvolva uma calculadora simples que aceite duas entradas numéricas e um operador (+, -, *, /) do usuário. Use try-except para lidar com divisões por zero e entradas não numéricas. Utilize if-elif-else para realizar a operação matemática baseada no operador fornecido. Imprima o resultado ou uma mensagem de erro apropriada.
 
